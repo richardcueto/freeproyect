@@ -1,44 +1,41 @@
 import openseespy.opensees as ops
 
-#modelo
+# ------------------------------
+# Empezamos a generar el modelo
+# -----------------------------
+
+# modelo constructor
 ops.model('basic','-ndm',2,'-ndf',2)
 
-node1=[0,0]
-node2=[1,0]
-# 		  tag x y
-ops.node(1,*node1)
-ops.node(2,*node2)
+# creamos nodos
+#     ntag,x,y
+ops.node(1,0,0)
+ops.node(2,1,0)
 
-# 		tag x y
-fixed1=[1,1,1]
-fixed2=[1,1,1]
-ops.fix(1,*fixed1)
-ops.fix(2,*fixed2)
+# establecemos condicion de restriccion
+#    ntag,x,y
+ops.fix(1,1,1)
+ops.fix(2,0,1)
 
-secType = 'Elastic'
-secTag = 1
-E=1
-A=1
-Iz=0
-secArgs = [E, A, Iz]
-ops.section(secType, secTag, *secArgs)
+# definimos materiales
+#             secType,secTag,E,A,Iz
+ops.section('Elastic',1,5,1,0 )
 
-eleNodes=[1,2]
-ops.element('TrussSection', 1,*eleNodes, secTag)
+# definimos elementos
+#                 eleType,eletag,eleNodes,secTag
+ops.element('TrussSection', 1,1,2,1)
 
-#times series
-tsTag=1
-ops.timeSeries('Constant', tsTag,'-factor',1)
+# creamos una serie de tiempo
+#                 tsType,tsTag,*
+ops.timeSeries('Constant', 1,'-factor',1)
 
-#load pattern
-patternTag=1
-ops.pattern('Plain', patternTag, tsTag,'-factor',1)
+# creamos un patron de carga simple
+#       patternType,patternTag,tsTag,*
+ops.pattern('Plain', 1, 1,'-factor',1)
 
-#carga
-fx=0.
-fy=-10e-3
-ops.load(1,fx,fy)
-ops.load(2,2,0.3)
+#carga   
+#       ntag,fx,fy
+ops.load(2,1,0)
 
 # ------------------------------
 # Start of analysis generation
@@ -65,4 +62,5 @@ ops.analysis("Static")
 # perform the analysis
 ops.analyze(1)
 
-ops.printModel()
+d=ops.nodeDisp(2)
+print(f"el nodo 2 se desplaza {d}")

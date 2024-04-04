@@ -4,7 +4,7 @@ from numpy import pi
 #         modelo  dimensiones grados de libertad
 ops.model('basic','-ndm',2,'-ndf',2)
 
-# 		  tag x y
+# 		  ntag x y
 ops.node(1,0,0)
 ops.node(2,1,0)
 ops.node(3,1,1)
