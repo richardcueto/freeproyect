@@ -62,5 +62,11 @@ ops.analysis("Static")
 # perform the analysis
 ops.analyze(1)
 
-d=ops.nodeDisp(2)
-print(f"el nodo 2 se desplaza {d}")
+for node in range(1,3):
+  d=ops.nodeDisp(node)
+  f=ops.nodeReaction(node)
+  print(f"el nodo {node} se desplaza: {d}")
+  print(f"el nodo {node} tiene reaccion: {f}")
+  if node!=1:
+    a=ops.eleResponse(node-1,"axialForce")
+    print(f"el elemento {node-1} tiene fuerza axial: {a}")
