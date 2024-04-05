@@ -10,8 +10,8 @@ ops.node(1,*node1)
 ops.node(2,*node2)
 
 # 		tag x y
-fixed1=[1,1,1]
-fixed2=[1,1,1]
+fixed1=[1,1]
+fixed2=[0,1]
 ops.fix(1,*fixed1)
 ops.fix(2,*fixed2)
 

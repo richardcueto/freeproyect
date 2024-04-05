@@ -64,11 +64,11 @@ ops.analysis("Static")
 ops.analyze(1)
 
 ops.printModel()
-# for nodo in range(1,4):
-#   d=ops.nodeDisp(nodo)
-#   print(f"el nodo {nodo} se desplaza {d}")
+for nodo in range(1,4):
+  d=ops.nodeDisp(nodo)
+  print(f"el nodo {nodo} se desplaza {d}")
 
-# for elemento in range(1,4):
-#   f=ops.eleResponse(elemento,"axialForce")
-#   print(f"elemento {elemento} resiste una fuerza de {f}")
+for elemento in range(1,4):
+  f=ops.eleResponse(elemento,"axialForce")
+  print(f"elemento {elemento} resiste una fuerza de {f}")
 
