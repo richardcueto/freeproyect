@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://ezdxf.mozman.at/docs/usage_for_beginners.html -->
+<html class="writer-html5" lang="en" data-content_root="./"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usage for Beginners — ezdxf 1.3.0b1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="./Usage for Beginners — ezdxf 1.3.0b1 documentation_files/pygments.css">
+      <link rel="stylesheet" type="text/css" href="./Usage for Beginners — ezdxf 1.3.0b1 documentation_files/theme.css">
+      <link rel="stylesheet" type="text/css" href="./Usage for Beginners — ezdxf 1.3.0b1 documentation_files/theme_overrides.css">
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="./Usage for Beginners — ezdxf 1.3.0b1 documentation_files/jquery.js"></script>
+        <script src="./Usage for Beginners — ezdxf 1.3.0b1 documentation_files/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="./Usage for Beginners — ezdxf 1.3.0b1 documentation_files/documentation_options.js"></script>
+        <script src="./Usage for Beginners — ezdxf 1.3.0b1 documentation_files/doctools.js"></script>
+        <script src="./Usage for Beginners — ezdxf 1.3.0b1 documentation_files/sphinx_highlight.js"></script>
+    <script src="./Usage for Beginners — ezdxf 1.3.0b1 documentation_files/theme.js"></script>
+    <link rel="index" title="Index" href="https://ezdxf.mozman.at/docs/genindex.html">
+    <link rel="search" title="Search" href="https://ezdxf.mozman.at/docs/search.html">
+    <link rel="next" title="Basic Concepts" href="https://ezdxf.mozman.at/docs/concepts/index.html">
+    <link rel="prev" title="Setup &amp; Dependencies" href="https://ezdxf.mozman.at/docs/setup.html"> 
+<script src="chrome-extension://nngceckbapebfimnlniiiahkandclblb/content/fido2/page-script.js" id="bw-fido2-page-script"></script></head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+
+          
+          
+          <a href="https://ezdxf.mozman.at/docs/index.html" class="icon icon-home">
+            ezdxf
+          </a>
+              <div class="version">
+                1.3.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://ezdxf.mozman.at/docs/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current" aria-expanded="true">
+<li class="toctree-l1"><a class="reference internal" href="https://ezdxf.mozman.at/docs/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://ezdxf.mozman.at/docs/setup.html">Setup &amp; Dependencies</a></li>
+<li class="toctree-l1 current" aria-expanded="true"><a class="reference internal current" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#" aria-expanded="true"><button class="toctree-expand" title="Open/close menu"></button>Usage for Beginners</a><ul>
+<li class="toctree-l2" aria-expanded="false"><a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#loading-dxf-files">Loading DXF Files</a></li>
+<li class="toctree-l2" aria-expanded="false"><a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#layouts-and-blocks">Layouts and Blocks</a></li>
+<li class="toctree-l2" aria-expanded="false"><a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#query-dxf-entities">Query DXF Entities</a></li>
+<li class="toctree-l2" aria-expanded="false"><a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#examine-dxf-entities">Examine DXF Entities</a></li>
+<li class="toctree-l2" aria-expanded="false"><a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#create-a-new-dxf-file">Create a New DXF File</a></li>
+<li class="toctree-l2" aria-expanded="false"><a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#create-new-dxf-entities">Create New DXF Entities</a></li>
+<li class="toctree-l2" aria-expanded="false"><a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#saving-dxf-files">Saving DXF Files</a></li>
+<li class="toctree-l2" aria-expanded="false"><a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#create-new-blocks">Create New Blocks</a></li>
+<li class="toctree-l2" aria-expanded="false"><a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#create-block-references">Create Block References</a></li>
+<li class="toctree-l2" aria-expanded="false"><a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#create-new-layers">Create New Layers</a></li>
+<li class="toctree-l2" aria-expanded="false"><a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#delete-entities">Delete Entities</a></li>
+<li class="toctree-l2" aria-expanded="false"><a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#further-information">Further Information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://ezdxf.mozman.at/docs/concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://ezdxf.mozman.at/docs/tasks/index.html">Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://ezdxf.mozman.at/docs/xref.html">External References (XREF)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://ezdxf.mozman.at/docs/addons/index.html">Add-ons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://ezdxf.mozman.at/docs/reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://ezdxf.mozman.at/docs/launcher.html">Launcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://ezdxf.mozman.at/docs/tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://ezdxf.mozman.at/docs/howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://ezdxf.mozman.at/docs/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://ezdxf.mozman.at/docs/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://ezdxf.mozman.at/docs/knowledgegraph.html">Knowledge Graph</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="https://ezdxf.mozman.at/docs/index.html">ezdxf</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="https://ezdxf.mozman.at/docs/index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Usage for Beginners</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="usage-for-beginners">
+<span id="arch-usr"></span><h1>Usage for Beginners<a class="headerlink" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#usage-for-beginners" title="Link to this heading">¶</a></h1>
+<p>This section shows the intended usage of the <cite>ezdxf</cite> package.
+This is just a brief overview for new <cite>ezdxf</cite> users, follow the provided links
+for more detailed information.</p>
+<p>First import the package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ezdxf</span>
+</pre></div>
+</div>
+<section id="loading-dxf-files">
+<h2>Loading DXF Files<a class="headerlink" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#loading-dxf-files" title="Link to this heading">¶</a></h2>
+<p><cite>ezdxf</cite> supports loading ASCII and binary DXF documents from a file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">ezdxf</span><span class="o">.</span><span class="n">readfile</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or from a zip-file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">ezdxf</span><span class="o">.</span><span class="n">readzip</span><span class="p">(</span><span class="n">zipfilename</span><span class="p">[,</span> <span class="n">filename</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Which loads the DXF document <cite>filename</cite> from the zip-file <cite>zipfilename</cite> or the
+first DXF file in the zip-file if <cite>filename</cite> is absent.</p>
+<p>It is also possible to read a DXF document from a stream by the <a class="reference internal" href="https://ezdxf.mozman.at/docs/drawing/management.html#ezdxf.read" title="ezdxf.read"><code class="xref py py-func docutils literal notranslate"><span class="pre">ezdxf.read()</span></code></a>
+function, but this is a more advanced feature, because this requires detection
+of the file encoding in advance.</p>
+<p>This works well with DXF documents from trusted sources like AutoCAD or BricsCAD.
+For loading DXF documents with minor or major flaws use the <a class="reference internal" href="https://ezdxf.mozman.at/docs/drawing/recover.html#module-ezdxf.recover" title="ezdxf.recover"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ezdxf.recover</span></code></a>
+module.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Documentation for <a class="reference internal" href="https://ezdxf.mozman.at/docs/drawing/management.html#ezdxf.readfile" title="ezdxf.readfile"><code class="xref py py-func docutils literal notranslate"><span class="pre">ezdxf.readfile()</span></code></a>, <a class="reference internal" href="https://ezdxf.mozman.at/docs/drawing/management.html#ezdxf.readzip" title="ezdxf.readzip"><code class="xref py py-func docutils literal notranslate"><span class="pre">ezdxf.readzip()</span></code></a> and
+<a class="reference internal" href="https://ezdxf.mozman.at/docs/drawing/management.html#ezdxf.read" title="ezdxf.read"><code class="xref py py-func docutils literal notranslate"><span class="pre">ezdxf.read()</span></code></a>, for more information about file
+management go to the <a class="reference internal" href="https://ezdxf.mozman.at/docs/drawing/management.html#dwgmanagement"><span class="std std-ref">Document Management</span></a> section. For loading DXF documents
+with structural errors look at the <a class="reference internal" href="https://ezdxf.mozman.at/docs/drawing/recover.html#module-ezdxf.recover" title="ezdxf.recover"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ezdxf.recover</span></code></a> module.</p>
+</div>
+</section>
+<section id="layouts-and-blocks">
+<h2>Layouts and Blocks<a class="headerlink" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#layouts-and-blocks" title="Link to this heading">¶</a></h2>
+<p>Layouts are containers for DXF entities like LINE or CIRCLE. The most important
+layout is the modelspace labeled as “Model” in CAD applications which represents
+the “world” work space. Paperspace layouts represents plottable sheets which
+contains often the framing and the tile block of a drawing and VIEWPORT entities
+as scaled and clipped “windows” into the modelspace.</p>
+<p>The modelspace is always present and can not be deleted. The active paperspace
+is also always present in a new DXF document but can be deleted, in that case
+another paperspace layout gets the new active paperspace, but you can not delete
+the last paperspace layout.</p>
+<p>Getting the modelspace of a DXF document:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">msp</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">modelspace</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Getting a paperspace layout by the name as shown in the tab of a
+CAD application:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psp</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">paperspace</span><span class="p">(</span><span class="s2">"Layout1"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A block is just another kind of entity space, which can be inserted
+multiple times into other layouts and blocks by the INSERT entity also called
+block references, this is a very powerful and an important concept of the DXF
+format.</p>
+<p>Getting a block layout by the block name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">blk</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"NAME"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>All these layouts have factory functions to create graphical DXF entities for
+their entity space, for more information about creating entities see section:
+<a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#create-new-dxf-entities">Create new DXF Entities</a></p>
+</section>
+<section id="query-dxf-entities">
+<h2>Query DXF Entities<a class="headerlink" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#query-dxf-entities" title="Link to this heading">¶</a></h2>
+<p>As said in the <a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#layouts-and-blocks">Layouts and Blocks</a> section, all graphical DXF entities are
+stored in layouts, all these layouts can be iterated and do support the index
+operator e.g. <code class="code docutils literal notranslate"><span class="pre">layout[-1]</span></code> returns the last entity.</p>
+<p>The main difference between iteration and index access is, that iteration filters
+destroyed entities, but the index operator returns also destroyed entities
+until these entities are purged by <code class="code docutils literal notranslate"><span class="pre">layout.purge()</span></code>, more about this topic
+in section: <a class="reference internal" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#delete-entities">Delete Entities</a>.</p>
+<p>There are two advanced query methods: <a class="reference internal" href="https://ezdxf.mozman.at/docs/layouts/layouts.html#ezdxf.layouts.BaseLayout.query" title="ezdxf.layouts.BaseLayout.query"><code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code></a>
+and <a class="reference internal" href="https://ezdxf.mozman.at/docs/layouts/layouts.html#ezdxf.layouts.BaseLayout.groupby" title="ezdxf.layouts.BaseLayout.groupby"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a>.</p>
+<p>Get all lines of layer <code class="docutils literal notranslate"><span class="pre">"MyLayer"</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">msp</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'LINE[layer=="MyLayer"]'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This returns an <a class="reference internal" href="https://ezdxf.mozman.at/docs/tools/query.html#ezdxf.query.EntityQuery" title="ezdxf.query.EntityQuery"><code class="xref py py-class docutils literal notranslate"><span class="pre">EntityQuery</span></code></a> container, which also provides
+the same <code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code> methods.</p>
+<p>Get all lines categorized by a DXF attribute like color:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">all_lines_by_color</span> <span class="o">=</span> <span class="n">msp</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"LINE"</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"color"</span><span class="p">)</span>
+<span class="n">lines_with_color_1</span> <span class="o">=</span> <span class="n">all_lines_by_color</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[])</span>
+</pre></div>
+</div>
+<p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code> method returns a regular Python <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> with colors as
+key and a regular Python <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code> of entities as values
+(not an <a class="reference internal" href="https://ezdxf.mozman.at/docs/tools/query.html#ezdxf.query.EntityQuery" title="ezdxf.query.EntityQuery"><code class="xref py py-class docutils literal notranslate"><span class="pre">EntityQuery</span></code></a> container).</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information go to the <a class="reference internal" href="https://ezdxf.mozman.at/docs/tutorials/getting_data.html#tut-getting-data"><span class="std std-ref">Tutorial for Getting Data from DXF Files</span></a></p>
+</div>
+</section>
+<section id="examine-dxf-entities">
+<h2>Examine DXF Entities<a class="headerlink" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#examine-dxf-entities" title="Link to this heading">¶</a></h2>
+<p>Each DXF entity has a <code class="xref py py-attr docutils literal notranslate"><span class="pre">dxf</span></code> namespace attribute, which stores the named
+DXF attributes, some entity attributes and assets are only available from
+Python properties or methods outside the <code class="xref py py-attr docutils literal notranslate"><span class="pre">dxf</span></code> namespace like the
+vertices of the LWPOLYLINE entity. More information about the DXF attributes of
+each entity can found in the documentation of the <a class="reference internal" href="https://ezdxf.mozman.at/docs/dxfentities/index.html#module-ezdxf.entities" title="ezdxf.entities"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ezdxf.entities</span></code></a> module.</p>
+<p>Get some basic DXF attributes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">entity</span><span class="o">.</span><span class="n">dxf</span><span class="o">.</span><span class="n">layer</span>  <span class="c1"># default is "0"</span>
+<span class="n">color</span> <span class="o">=</span> <span class="n">entity</span><span class="o">.</span><span class="n">dxf</span><span class="o">.</span><span class="n">color</span>  <span class="c1"># default is 256 = BYLAYER</span>
+</pre></div>
+</div>
+<p>Most DXF attributes have a default value, which will be returned if the DXF
+attribute is not present, for DXF attributes without a default value you can
+check if the attribute really exist:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">entity</span><span class="o">.</span><span class="n">dxf</span><span class="o">.</span><span class="n">hasattr</span><span class="p">(</span><span class="s2">"true_color"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">get()</span></code> method and provide a default value:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">entity</span><span class="o">.</span><span class="n">dxf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"true_color"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/dxfentities/dxfgfx.html#common-graphical-dxf-attributes"><span class="std std-ref">Common graphical DXF attributes</span></a></p></li>
+<li><p>Helper class <a class="reference internal" href="https://ezdxf.mozman.at/docs/tools/gfxattribs.html#ezdxf.gfxattribs.GfxAttribs" title="ezdxf.gfxattribs.GfxAttribs"><code class="xref py py-class docutils literal notranslate"><span class="pre">ezdxf.gfxattribs.GfxAttribs</span></code></a> for building DXF attribute
+dictionaries.</p></li>
+</ul>
+</div>
+</section>
+<section id="create-a-new-dxf-file">
+<h2>Create a New DXF File<a class="headerlink" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#create-a-new-dxf-file" title="Link to this heading">¶</a></h2>
+<p>Create new document for the latest supported DXF version:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">ezdxf</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Create a new DXF document for a specific DXF version, e.g. for DXF R12:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">ezdxf</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"R12"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <a class="reference internal" href="https://ezdxf.mozman.at/docs/drawing/management.html#ezdxf.new" title="ezdxf.new"><code class="xref py py-func docutils literal notranslate"><span class="pre">ezdxf.new()</span></code></a> function can create some standard resources, such as
+linetypes and text styles, by setting the argument <cite>setup</cite> to <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">ezdxf</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">setup</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/tutorials/simple_drawings.html#tut-simple-drawings"><span class="std std-ref">Tutorial for Creating DXF Drawings</span></a></p></li>
+<li><p>Documentation for <a class="reference internal" href="https://ezdxf.mozman.at/docs/drawing/management.html#ezdxf.new" title="ezdxf.new"><code class="xref py py-func docutils literal notranslate"><span class="pre">ezdxf.new()</span></code></a>, for more information about file
+management go to the <a class="reference internal" href="https://ezdxf.mozman.at/docs/drawing/management.html#dwgmanagement"><span class="std std-ref">Document Management</span></a> section.</p></li>
+</ul>
+</div>
+</section>
+<section id="create-new-dxf-entities">
+<h2>Create New DXF Entities<a class="headerlink" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#create-new-dxf-entities" title="Link to this heading">¶</a></h2>
+<p>The factory methods for creating new graphical DXF entities are located in the
+<a class="reference internal" href="https://ezdxf.mozman.at/docs/layouts/layouts.html#ezdxf.layouts.BaseLayout" title="ezdxf.layouts.BaseLayout"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseLayout</span></code></a> class and these factory methods are
+available for all entity containers:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/layouts/layouts.html#ezdxf.layouts.Modelspace" title="ezdxf.layouts.Modelspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">Modelspace</span></code></a></p></li>
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/layouts/layouts.html#ezdxf.layouts.Paperspace" title="ezdxf.layouts.Paperspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">Paperspace</span></code></a></p></li>
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/layouts/layouts.html#ezdxf.layouts.BlockLayout" title="ezdxf.layouts.BlockLayout"><code class="xref py py-class docutils literal notranslate"><span class="pre">BlockLayout</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<p>The usage is simple:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">msp</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">modelspace</span><span class="p">()</span>
+<span class="n">msp</span><span class="o">.</span><span class="n">add_line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">dxfattribs</span><span class="o">=</span><span class="p">{</span><span class="s2">"layer"</span><span class="p">:</span> <span class="s2">"MyLayer"</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>A few important/required DXF attributes are explicit method arguments,
+most additional DXF attributes are gives as a regular Python
+<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> object by the keyword only argument <code class="xref py py-attr docutils literal notranslate"><span class="pre">dxfattribs</span></code>.
+The supported DXF attributes can be found in the documentation of the
+<a class="reference internal" href="https://ezdxf.mozman.at/docs/dxfentities/index.html#module-ezdxf.entities" title="ezdxf.entities"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ezdxf.entities</span></code></a> module.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not instantiate DXF entities by yourself and add them to layouts, always
+use the provided factory methods to create new graphical entities, this is
+the intended way to use <cite>ezdxf</cite>.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/tasks/add_dxf_entities.html#thematic-factory-method-index"><span class="std std-ref">Thematic Index of Layout Factory Methods</span></a></p></li>
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/tutorials/simple_drawings.html#tut-simple-drawings"><span class="std std-ref">Tutorial for Creating DXF Drawings</span></a></p></li>
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/tutorials/dxf_primitives.html#tut-dxf-primitives"><span class="std std-ref">Tutorial for Simple DXF Entities</span></a></p></li>
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/tutorials/lwpolyline.html#tut-lwpolyline"><span class="std std-ref">Tutorial for LWPolyline</span></a></p></li>
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/tutorials/text.html#tut-text"><span class="std std-ref">Tutorial for Text</span></a></p></li>
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/tutorials/mtext.html#tut-mtext"><span class="std std-ref">Tutorial for MText and MTextEditor</span></a></p></li>
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/tutorials/hatch.html#tut-hatch"><span class="std std-ref">Tutorial for Hatch</span></a></p></li>
+</ul>
+</div>
+</section>
+<section id="saving-dxf-files">
+<h2>Saving DXF Files<a class="headerlink" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#saving-dxf-files" title="Link to this heading">¶</a></h2>
+<p>Save the DXF document with a new name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="o">.</span><span class="n">saveas</span><span class="p">(</span><span class="s2">"new_name.dxf"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or with the same name as loaded:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Documentation for <a class="reference internal" href="https://ezdxf.mozman.at/docs/drawing/drawing.html#ezdxf.document.Drawing.save" title="ezdxf.document.Drawing.save"><code class="xref py py-func docutils literal notranslate"><span class="pre">ezdxf.document.Drawing.save()</span></code></a> and
+<a class="reference internal" href="https://ezdxf.mozman.at/docs/drawing/drawing.html#ezdxf.document.Drawing.saveas" title="ezdxf.document.Drawing.saveas"><code class="xref py py-func docutils literal notranslate"><span class="pre">ezdxf.document.Drawing.saveas()</span></code></a>, for more information about file
+management go to the <a class="reference internal" href="https://ezdxf.mozman.at/docs/drawing/management.html#dwgmanagement"><span class="std std-ref">Document Management</span></a> section.</p>
+</div>
+</section>
+<section id="create-new-blocks">
+<h2>Create New Blocks<a class="headerlink" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#create-new-blocks" title="Link to this heading">¶</a></h2>
+<p>The block definitions of a DXF document are managed by the
+<a class="reference internal" href="https://ezdxf.mozman.at/docs/sections/blocks.html#ezdxf.sections.blocks.BlocksSection" title="ezdxf.sections.blocks.BlocksSection"><code class="xref py py-class docutils literal notranslate"><span class="pre">BlocksSection</span></code></a> object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_block</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"MyBlock"</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="https://ezdxf.mozman.at/docs/tutorials/blocks.html#tut-blocks"><span class="std std-ref">Tutorial for Blocks</span></a></p>
+</div>
+</section>
+<section id="create-block-references">
+<h2>Create Block References<a class="headerlink" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#create-block-references" title="Link to this heading">¶</a></h2>
+<p>A block reference is just another DXF entity called INSERT.
+The <a class="reference internal" href="https://ezdxf.mozman.at/docs/blocks/insert.html#ezdxf.entities.Insert" title="ezdxf.entities.Insert"><code class="xref py py-class docutils literal notranslate"><span class="pre">Insert</span></code></a> entity is created by the factory method:
+<a class="reference internal" href="https://ezdxf.mozman.at/docs/layouts/layouts.html#ezdxf.layouts.BaseLayout.add_blockref" title="ezdxf.layouts.BaseLayout.add_blockref"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_blockref()</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">msp</span><span class="o">.</span><span class="n">add_blockref</span><span class="p">(</span><span class="s2">"MyBlock"</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="https://ezdxf.mozman.at/docs/tutorials/blocks.html#tut-blocks"><span class="std std-ref">Tutorial for Blocks</span></a> for more advanced features like using
+<a class="reference internal" href="https://ezdxf.mozman.at/docs/blocks/attrib.html#ezdxf.entities.Attrib" title="ezdxf.entities.Attrib"><code class="xref py py-class docutils literal notranslate"><span class="pre">Attrib</span></code></a> entities.</p>
+</div>
+</section>
+<section id="create-new-layers">
+<h2>Create New Layers<a class="headerlink" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#create-new-layers" title="Link to this heading">¶</a></h2>
+<p>A layer is not an entity container, a layer is just another DXF attribute
+stored in the entity and the entity can inherit some properties from this
+<a class="reference internal" href="https://ezdxf.mozman.at/docs/tables/layer_table_entry.html#ezdxf.entities.Layer" title="ezdxf.entities.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Layer</span></code></a> object.
+Layer objects are stored in the layer table which is available as
+attribute <code class="code docutils literal notranslate"><span class="pre">doc.layers</span></code>.</p>
+<p>You can create your own layers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_layer</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">"MyLayer"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The layer object also controls the visibility of entities which references this
+layer, the on/off state of the layer is unfortunately stored as positive or
+negative color value which make the raw DXF attribute of layers useless, to
+change the color of a layer use the property <code class="xref py py-attr docutils literal notranslate"><span class="pre">Layer.color</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_layer</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>To change the state of a layer use the provided methods of the
+<a class="reference internal" href="https://ezdxf.mozman.at/docs/tables/layer_table_entry.html#ezdxf.entities.Layer" title="ezdxf.entities.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Layer</span></code></a> object, like
+<a class="reference internal" href="https://ezdxf.mozman.at/docs/tables/layer_table_entry.html#ezdxf.entities.Layer.on" title="ezdxf.entities.Layer.on"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on()</span></code></a>, <a class="reference internal" href="https://ezdxf.mozman.at/docs/tables/layer_table_entry.html#ezdxf.entities.Layer.off" title="ezdxf.entities.Layer.off"><code class="xref py py-meth docutils literal notranslate"><span class="pre">off()</span></code></a>,
+<a class="reference internal" href="https://ezdxf.mozman.at/docs/tables/layer_table_entry.html#ezdxf.entities.Layer.freeze" title="ezdxf.entities.Layer.freeze"><code class="xref py py-meth docutils literal notranslate"><span class="pre">freeze()</span></code></a> or <a class="reference internal" href="https://ezdxf.mozman.at/docs/tables/layer_table_entry.html#ezdxf.entities.Layer.thaw" title="ezdxf.entities.Layer.thaw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">thaw()</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_layer</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="https://ezdxf.mozman.at/docs/concepts/layers.html#layer-concept"><span class="std std-ref">Layers</span></a></p>
+</div>
+</section>
+<section id="delete-entities">
+<h2>Delete Entities<a class="headerlink" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#delete-entities" title="Link to this heading">¶</a></h2>
+<p>The safest way to delete entities is to delete the entity from the layout
+containing that entity:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="n">msp</span><span class="o">.</span><span class="n">add_line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">msp</span><span class="o">.</span><span class="n">delete_entity</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This removes the entity immediately from the layout and destroys the entity.
+The property <a class="reference internal" href="https://ezdxf.mozman.at/docs/dxfentities/dxfentity.html#ezdxf.entities.DXFEntity.is_alive" title="ezdxf.entities.DXFEntity.is_alive"><code class="xref py py-attr docutils literal notranslate"><span class="pre">is_alive</span></code></a> returns <code class="docutils literal notranslate"><span class="pre">False</span></code> for a
+destroyed entity and all Python attributes are deleted, so
+<code class="code docutils literal notranslate"><span class="pre">line.dxf.color</span></code> will raise an <code class="xref py py-class docutils literal notranslate"><span class="pre">AttributeError</span></code> exception,
+because <code class="docutils literal notranslate"><span class="pre">line</span></code> does not have a <a class="reference internal" href="https://ezdxf.mozman.at/docs/dxfentities/dxfentity.html#ezdxf.entities.DXFEntity.dxf" title="ezdxf.entities.DXFEntity.dxf"><code class="xref py py-attr docutils literal notranslate"><span class="pre">dxf</span></code></a>
+attribute anymore.</p>
+<p><cite>Ezdxf</cite> also supports manually destruction of entities by calling the method
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">destroy()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Manually destroyed entities are not removed immediately from entities containers
+like <code class="xref py py-class docutils literal notranslate"><span class="pre">Modelspace</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">EntityQuery</span></code>, but iterating such a container
+will filter destroyed entities automatically, so a <code class="code docutils literal notranslate"><span class="pre">for</span> <span class="pre">e</span> <span class="pre">in</span> <span class="pre">msp:</span> <span class="pre">...</span></code> loop
+will never yield destroyed entities. The index operator and the <code class="xref py py-func docutils literal notranslate"><span class="pre">len()</span></code>
+function do <strong>not</strong> filter deleted entities, to avoid getting deleted entities
+call the <code class="xref py py-func docutils literal notranslate"><span class="pre">purge()</span></code> method of the container manually to remove deleted
+entities.</p>
+</section>
+<section id="further-information">
+<h2>Further Information<a class="headerlink" href="https://ezdxf.mozman.at/docs/usage_for_beginners.html#further-information" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/concepts/index.html#basic-concepts"><span class="std std-ref">Basic Concepts</span></a>: what is the meaning or purpose of …</p></li>
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/tasks/index.html#tasks"><span class="std std-ref">Tasks</span></a>: how to accomplish certain tasks</p></li>
+<li><p><a class="reference internal" href="https://ezdxf.mozman.at/docs/reference.html#reference"><span class="std std-ref">Reference</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="https://ezdxf.mozman.at/docs/setup.html" class="btn btn-neutral float-left" title="Setup &amp; Dependencies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="https://ezdxf.mozman.at/docs/concepts/index.html" class="btn btn-neutral float-right" title="Basic Concepts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr>
+
+  <div role="contentinfo">
+    <p>© Copyright 2011-2024, Manfred Moitzi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org/">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+
+</body></html>

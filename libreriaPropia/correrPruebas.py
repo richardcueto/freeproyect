@@ -1,0 +1,49 @@
+from structural.funciones import *
+# import sympy as sp
+# from scipy.integrate import quad
+import numpy as np
+# x,P,L,E,I=sp.symbols('x P L E I')
+# # E,I,L=20e3,200e9,6.84e-6,3 #M:N.m,E:N/m2,I:m4,L:m
+# SlopeAndDeflection(x=x,f=P*x/2,E=E,I=I,dv2_dx2i=0,dv2_dx2f=L)
+# E,A=sp.symbols('E A')
+# E,A=200e9,400e-6
+# anal.virtualForces(E,A)
+# x,E,A,G,I=sp.symbols('x E A G I')
+# E,A,G,I=200e6,50e-3,80e6,235e-6
+# m=VirtualBendingEnergy(m=x,M=180*x-30*x**2,E=E,I=I,a=0,b=3)+VirtualBendingEnergy(m=1.25*x,M=112.5*x,E=E,I=I,a=0,b=2.4)
+# # print(a)
+# a=VirtualAxialEnergy(E=G,A=A)
+# s=VirtualShearEnergy(1,180-60*x,G,A,3)+VirtualShearEnergy(-1.25,-112.5,G,A,2.4)
+# print(m+a+s)
+# B,E,I=sp.symbols('B E I')
+# FEM_AB,FEM_BA,FEMBC=0,0,FEM_Triangular(6,6)
+# a=slopeDeflectionEquation(teta_A=0,teta_B=B,desp_A=0,desp_B=0,FEM_AB=FEM_AB,FEM_BA=FEM_BA,L=8,E=E,I=I)
+# b=slopeDeflectionEquation(teta_A=B,teta_B=0,desp_A=0,desp_B=0,FEM_AB=FEMBC[0],FEM_BA=FEMBC[1],L=6,E=E,I=I)
+# B_sol=solve(a[1]+b[0],B)
+# print(B_sol)
+# a=slopeDeflectionEquation(teta_A=0,teta_B=B_sol[0],desp_A=0,desp_B=0,FEM_AB=FEM_AB,FEM_BA=FEM_BA,L=8,E=E,I=I)
+# b=slopeDeflectionEquation(teta_A=B_sol[0],teta_B=0,desp_A=0,desp_B=0,FEM_AB=FEMBC[0],FEM_BA=FEMBC[1],L=6,E=E,I=I)
+# FEM_W_Distribuid('rectangular',6000,4)
+
+Model(2,3)
+#ingresaremos nodos locales y siempre colocando en la forma del libro
+node(1,0,0)
+node(2,6,0)
+node(3,6,-6)
+
+fix(1,0,1,0)
+fix(2,0,0,0)
+fix(3,1,1,1)
+
+load(2,20,0,0) 
+E=200e6
+I=180e-6
+A=6000e-6
+
+element('elasticBeamColumn',1,1,2,E=E,A=A,I=I)
+a=element('elasticBeamColumn',2,2,3,E=E,A=A,I=I)
+print(a[1][3])
+print(a[1][2])
+
+analyze()
+plot()
