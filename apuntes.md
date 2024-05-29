@@ -1,11 +1,25 @@
-pip freezen > name.txt
+# Mi Notas
+
+## Virtualenv 
+`siempre es bueno crear un entornovirtual`
+
+```
+virtualenv env
+.\env\Scripts\activate
+pip list
+pip freeze > requirements.txt
+pip install -r requirements.txt
+```
+
+## PyQt5
+```
+pip show PyQt5
+qt5-tools.exe designer 
+pip install pyqt5 pyqt5-tools
+
+# compilar archivos
 pyuic6 input.ui -o output.py
 pyrcc6 input.qrc -o logo_rc.py
 
-+ instalar pyqt5
-pip list
-pip show PyQt5
-qt6-tools.exe designer 
-pip install pyqt5 pyqt5-tools
-pyuic6 input.ui -o output.py
 pyinstaller --onefile tu_script.py
+```
